@@ -1,12 +1,13 @@
 from behave import given, when, then
 import time
 
-from browser2 import Browser
-from footer import Footer
+from webelements.browser2 import Browser
+from components.footer import Footer
 from config_reader import ConfigReader
-from return_page import ReturnPage
-from UIElement3 import UIElement as Element
+from pages.return_page import ReturnPage
+from webelements.UIElement3 import UIElement as Element
 from selenium.webdriver.common.by import By
+
 
 URL = "https://techskillacademy.net/brainbucket/index.php"
 configs = ConfigReader("config.ini")
@@ -15,9 +16,10 @@ order_section_name = 'order2'
 
 
 @given("user opens home page in a browser")
-def launch_login_page(context):
+def launch_home_page(context):
     browser = Browser(URL, configs.get_browser('environment'), configs.get_wait_time('environment'))
     context.browser = browser
+    header.logo.wait_until_visible()
 
 
 @when("user clicks on Returns option in the footer")

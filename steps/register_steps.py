@@ -1,12 +1,13 @@
 from behave import given, when, then
 import time
 
-from browser2 import Browser
-from header import Header
+from webelements.browser2 import Browser
+from components.header import Header
 from config_reader import ConfigReader
-from registration_page import RegistrationPage
-from UIElement3 import UIElement as Element
+from pages.registration_page import RegistrationPage
+from webelements.UIElement3 import UIElement as Element
 from selenium.webdriver.common.by import By
+
 
 URL = "https://techskillacademy.net/brainbucket/index.php"
 configs = ConfigReader("config.ini")
