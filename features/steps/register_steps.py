@@ -14,12 +14,9 @@ configs = ConfigReader("config.ini")
 user_section_name = 'user2'
 
 
-@given("an unregistered user opens home page in a browser")
+@given("an unregistered user is on home page")
 def launch_login_page(context):
-    browser = Browser(URL, configs.get_browser('environment'), configs.get_wait_time('environment'))
-    context.browser = browser
-    header = Header(context.browser)
-    context.header = header
+    header = context.header
     header.open_my_account_dropdown()
     # checking that the user is not registered - not logged in - if the user is, the first item in the dropdown changes
     assert header.get_my_account_first_item() == 'Register'
@@ -75,11 +72,19 @@ def click_submit_button(context):
     registration_page.submit_form()
 
 
-@then("message \"Your Account Has Been Created!\" appears")
+@then("message \"Your Account Has Been Created!\" or \"E-Mail Address is already registered\" appears")
 def check_return_result_page(context):
     browser = context.browser
-    registration_message = Element(browser, By.XPATH, "//h1")
-    # assertion that the message appears that the account is successfully created
-    assert registration_message.get_text() == 'Your Account Has Been Created!'
-    time.sleep(2)
-    browser.shutdown()
+    registration_confirmation = Element(browser, By.XPATH, '//h1').get_text()
+    # # assertion that the message appears that the account is successfully created
+    # assert registration_confirmation == 'Your Account Has Been Created!'
+
+    registration_message = Element(browser, By.XPATH, "//*[@class='alert alert-danger' and contains(text(), 'Warning')]").get_text()
+    # assertion that the message appears that the account is successfully created or the account has been registered
+    print("confirmation:" + registration_confirmation)
+    print("message:" + registration_message)
+    if 'already' in registration_message:
+        assert registration_message == 'Warning: E-Mail Address is already registered!'
+    else:
+        assert registration_confirmation == 'Your Account Has Been Created!'
+

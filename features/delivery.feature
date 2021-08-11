@@ -1,7 +1,6 @@
 Feature: Users can get an estimate of a delivery cost for an item
   Background:
-    Given a user opens home page in a browser
-    And user selects a product to buy using navigation bar and dropdown menus
+    Given from home page user selects a product to buy using navigation bar and dropdown menus
     And user adds a product to buy in Cart
 
 

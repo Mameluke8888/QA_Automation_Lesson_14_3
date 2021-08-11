@@ -2,6 +2,7 @@ from behave import given, when, then
 import time
 
 from webelements.browser2 import Browser
+from components.header import Header
 from components.footer import Footer
 from config_reader import ConfigReader
 from pages.return_page import ReturnPage
@@ -15,14 +16,7 @@ user_section_name = 'user2'
 order_section_name = 'order2'
 
 
-@given("user opens home page in a browser")
-def launch_home_page(context):
-    browser = Browser(URL, configs.get_browser('environment'), configs.get_wait_time('environment'))
-    context.browser = browser
-    header.logo.wait_until_visible()
-
-
-@when("user clicks on Returns option in the footer")
+@given("user opens return request form by clicking on Returns option in the footer")
 def open_return_page(context):
     footer = Footer(context.browser)
     context.footer = footer
@@ -77,5 +71,3 @@ def check_return_result_page(context):
     return_request_message = Element(browser, By.XPATH, "//div[@id='content']/p[2]")
     # assertion that the message appears that the return request is successfully sent
     assert return_request_message.get_text() == 'You will be notified via e-mail as to the status of your request.'
-    time.sleep(2)
-    browser.shutdown()

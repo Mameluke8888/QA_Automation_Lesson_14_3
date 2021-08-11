@@ -20,7 +20,6 @@ def launch_home_page(context):
     context.browser = browser
     header = Header(context.browser)
     context.header = header
-    header.open_my_account_dropdown()
     # checking the user is on Brainbucket website, the logo is visible
     header.logo.wait_until_visible()
     # checking the user is on home page, the slideshow is visible

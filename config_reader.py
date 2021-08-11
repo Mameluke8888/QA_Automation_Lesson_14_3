@@ -19,6 +19,9 @@ class ConfigReader:
     def get_wait_time(self, section_name):
         return self.reader.get_wait_time(section_name)
 
+    def get_url(self):
+        return self.reader.get_url()
+
     def get_email(self, section_name):
         return self.reader.get_email(section_name)
 
@@ -72,3 +75,19 @@ class ConfigReader:
 
     def get_subscription(self, section_name):
         return self.reader.get_subscription(section_name)
+
+    #for product review
+    def get_section(self, section_name):
+        return self.reader.get_section(section_name)
+
+    def get_subsection(self, section_name):
+        return self.reader.get_subsection(section_name)
+
+    def get_product(self, section_name):
+        return self.reader.get_product(section_name)
+
+    def get_review(self, section_name):
+        return self.reader.get_review(section_name)
+
+    def get_rating(self, section_name):
+        return self.reader.get_rating(section_name)

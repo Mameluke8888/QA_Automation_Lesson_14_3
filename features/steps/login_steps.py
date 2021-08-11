@@ -17,10 +17,7 @@ user_section_name = 'user2'
 
 @given("registered user who is not logged in has home page opened in a browser")
 def launch_login_page(context):
-    browser = Browser(URL, configs.get_browser('environment'), configs.get_wait_time('environment'))
-    context.browser = browser
-    header = Header(context.browser)
-    context.header = header
+    header = context.header
     header.open_my_account_dropdown()
     login_page = LoginPage(context.browser)
     context.login_page = login_page
@@ -80,8 +77,6 @@ def check_account_page_open(context):
     login_message = Element(browser, By.XPATH, "//h2[contains(text(), 'My Account')]")
     # assertion that the message appears that the return request is successfully sent
     login_message.wait_until_visible()
-    time.sleep(2)
-    browser.shutdown()
 
 
 @then("message \"Warning: No match for E-Mail Address and/or Password.\" appears")
@@ -90,5 +85,4 @@ def check_warning_message(context):
     login_message = Element(browser, By.XPATH, "//*[@class='alert alert-danger' and contains(text(), 'Warning')]")
     # assertion that the message appears that typed in credentials are not match with the registered data
     assert login_message.get_text() == 'Warning: No match for E-Mail Address and/or Password.'
-    time.sleep(2)
-    browser.shutdown()
+

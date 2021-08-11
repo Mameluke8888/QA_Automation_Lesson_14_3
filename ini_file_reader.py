@@ -20,6 +20,12 @@ class IniFileReader:
             raise Exception("Wait_time option is not present in the config file")
         return int(value)
 
+    def get_url(self):
+        value = self.data.get('environment', 'url', fallback=None)
+        if value is None:
+            raise Exception("URL option is not found in environment section")
+        return value
+
     def get_email(self, section_name):
         value = self.data.get(section_name, "email", fallback=None)
         if value is None:
@@ -126,4 +132,34 @@ class IniFileReader:
         value = self.data.get(section_name, "subscribe", fallback=None)
         if value is None:
             raise Exception("subscribe option is not found in section ", section_name)
+        return value
+
+    def get_section(self, section_name):
+        value = self.data.get(section_name, "section", fallback=None)
+        if value is None:
+            raise Exception("section option is not found in section ", section_name)
+        return value
+
+    def get_subsection(self, section_name):
+        value = self.data.get(section_name, "subsection", fallback=None)
+        if value is None:
+            raise Exception("subsection option is not found in section ", section_name)
+        return value
+
+    def get_product(self, section_name):
+        value = self.data.get(section_name, "product", fallback=None)
+        if value is None:
+            raise Exception("product option is not found in section ", section_name)
+        return value
+
+    def get_review(self, section_name):
+        value = self.data.get(section_name, "review", fallback=None)
+        if value is None:
+            raise Exception("review option is not found in section ", section_name)
+        return value
+
+    def get_rating(self, section_name):
+        value = self.data.get(section_name, "rating", fallback=None)
+        if value is None:
+            raise Exception("rating option is not found in section ", section_name)
         return value
