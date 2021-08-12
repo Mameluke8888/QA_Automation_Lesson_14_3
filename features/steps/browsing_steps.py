@@ -14,24 +14,19 @@ URL = "https://techskillacademy.net/brainbucket/index.php"
 configs = ConfigReader("config.ini")
 
 
-@given("user opens Brainbucket home page in a browser")
+@given("user has navigation bar available on home page")
 def launch_home_page(context):
-    browser = Browser(URL, configs.get_browser('environment'), configs.get_wait_time('environment'))
-    context.browser = browser
-    header = Header(context.browser)
-    context.header = header
-    # checking the user is on Brainbucket website, the logo is visible
-    header.logo.wait_until_visible()
-    # checking the user is on home page, the slideshow is visible
-    slideshow = Element(browser, By.ID, "slideshow0")
-    slideshow.wait_until_visible()
+    browser = context.browser
+    navigation_bar = NavigationBar(browser)
+    context.navigation_bar = navigation_bar
+    # check that navigation bar is visible and basic content check
+    navigation_bar.desktops.wait_until_visible()
+    assert navigation_bar.desktops.get_text() == 'Desktops'
 
 
 @when('user moves to "{section}" in navigation bar')
 def open_section_page(context, section):
-    browser = context.browser
-    navigation_bar = NavigationBar(browser)
-    context.navigation_bar = navigation_bar
+    navigation_bar = context.navigation_bar
     if section == 'Desktops':
         navigation_bar.move_to_desktops()
     elif section == 'Phones & PDAs':
@@ -53,7 +48,7 @@ def open_option_page(context, option):
         navigation_bar.select_all_components()
 
 
-@then('page with all "{product}" is open')
+@then('page with "{product}" is open')
 def check_product_page_open(context, product):
     browser = context.browser
     # product page title on a product page
@@ -66,5 +61,3 @@ def check_product_page_open(context, product):
         assert product_page_title.get_text() == 'Phones'
     elif product == 'Components':
         assert product_page_title.get_text() == 'Components'
-    time.sleep(2)
-    browser.shutdown()

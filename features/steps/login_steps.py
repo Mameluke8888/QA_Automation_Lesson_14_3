@@ -21,7 +21,7 @@ def launch_login_page(context):
     header.open_my_account_dropdown()
     login_page = LoginPage(context.browser)
     context.login_page = login_page
-    # checking that the user is not registered - not logged in - if the user is, the first item in the dropdown changes
+    # checking that the user is  not logged in - if the user is, the first item in the dropdown changes
     assert header.get_my_account_first_item() == 'Register'
 
 

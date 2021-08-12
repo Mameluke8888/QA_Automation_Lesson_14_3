@@ -2,10 +2,10 @@ Feature: browsing products
 
 
   Scenario Outline: User can browse different products
-    Given user opens Brainbucket home page in a browser
+    Given user has navigation bar available on home page
     When user moves to "<section>" in navigation bar
     And user clicks on "<option>" of a dropdown menu
-    Then page with all "<product>" is open
+    Then page with "<product>" is open
 
 
     Examples: Products
