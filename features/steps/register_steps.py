@@ -78,7 +78,6 @@ def check_return_result_page(context):
     registration_confirmation = Element(browser, By.XPATH, '//h1').get_text()
     # # assertion that the message appears that the account is successfully created
     # assert registration_confirmation == 'Your Account Has Been Created!'
-
     registration_message = Element(browser, By.XPATH, "//*[@class='alert alert-danger' and contains(text(), 'Warning')]").get_text()
     # assertion that the message appears that the account is successfully created or the account has been registered
     print("confirmation:" + registration_confirmation)

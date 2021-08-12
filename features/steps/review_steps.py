@@ -41,7 +41,7 @@ def open_review_tab(context):
     browser = context.browser
     product_page = ProductPage(browser)
     context.product_page = product_page
-    product_page.click_review_tab()
+    product_page.click_review_link()
 
 
 @when('user enters his/her name in a corresponding field')
