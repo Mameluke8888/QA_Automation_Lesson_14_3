@@ -20,6 +20,7 @@ def select_product(context):
     configs = context.configs
     context.execute_steps(
         '''
+        Given user has navigation bar available on home page
         When user moves to "''' + configs.get_section(review_section_name) + '''" in navigation bar
         When user clicks on "''' + configs.get_subsection(review_section_name) + '''" of a dropdown menu
         '''

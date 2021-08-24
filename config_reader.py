@@ -76,7 +76,7 @@ class ConfigReader:
     def get_subscription(self, section_name):
         return self.reader.get_subscription(section_name)
 
-    #for product review
+    # for product review
     def get_section(self, section_name):
         return self.reader.get_section(section_name)
 
@@ -91,3 +91,28 @@ class ConfigReader:
 
     def get_rating(self, section_name):
         return self.reader.get_rating(section_name)
+
+    # for remote browser configuration like BrowserStack
+    def get_username(self, section_name):
+        return self.reader.get_username(section_name)
+
+    def get_access_key(self, section_name):
+        return self.reader.get_access_key(section_name)
+
+    def get_os_version(self, section_name):
+        return self.reader.get_os_version(section_name)
+
+    def get_os_name(self, section_name):
+        return self.reader.get_os_name(section_name)
+
+    def get_browser_version(self, section_name):
+        return self.reader.get_browser_version(section_name)
+
+    def get_browser_name(self, section_name):
+        return self.reader.get_browser_name(section_name)
+
+    def get_build_name(self, section_name):
+        return self.reader.get_build_name(section_name)
+
+    def get_accept_ssl_certs(self, section_name):
+        return self.reader.get_accept_ssl_certs(section_name)

@@ -19,7 +19,7 @@ def before_all(context):
 def before_scenario(context, scenario):
     section = 'environment'
     configs = context.configs
-    browser = Browser(configs.get_url(), configs.get_browser(section), configs.get_wait_time(section))
+    browser = Browser(configs.get_url(), configs.get_browser(section), configs.get_wait_time(section), scenario)
     context.browser = browser
     header = Header(context.browser)
     context.header = header

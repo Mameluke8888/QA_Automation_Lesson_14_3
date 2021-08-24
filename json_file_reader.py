@@ -1,5 +1,6 @@
 import json
 
+
 class JsonFileReader:
     def __init__(self, filename):
         self.data = None
@@ -14,15 +15,85 @@ class JsonFileReader:
 
     def get_wait_time(self):
         if 'wait_time' not in self.data.keys():
-            raise Exception("Wait_time option is not present in the config file")
+            raise Exception("wait_time option is not present in the config file")
         return int(self.data['wait_time'])
 
-    def get_user1_email(self):
-        if 'email' not in self.data.keys():
-            raise Exception("email option is not found in user1 section")
-        return self.data['email']
+    def get_email(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'email' not in self.data[section_name].keys():
+                raise Exception("email option is not present in the config file")
+        return self.data[section_name]['email']
 
-    def get_user1_password(self):
-        if 'password' not in self.data.keys():
-            raise Exception("password option is not found in iser1 section")
-        return self.data['password']
+    def get_password(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'password' not in self.data[section_name].keys():
+                raise Exception("password option is not present in the config file")
+        return self.data[section_name]['password']
+
+    def get_username(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'username' not in self.data[section_name].keys():
+                raise Exception("username option is not present in the config file")
+        return self.data[section_name]['username']
+
+    def get_access_key(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'access_key' not in self.data[section_name].keys():
+                raise Exception("access_key option is not present in the config file")
+        return self.data[section_name]['access_key']
+
+    def get_os_version(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'os_version' not in self.data[section_name].keys():
+                raise Exception("os_version option is not present in the config file")
+        return self.data[section_name]['os_version']
+
+    def get_os_name(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'os_name' not in self.data[section_name].keys():
+                raise Exception("os_name option is not present in the config file")
+        return self.data[section_name]['os_name']
+
+    def get_browser_name(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'browser_name' not in self.data[section_name].keys():
+                raise Exception("browser_name option is not present in the config file")
+        return self.data[section_name]['browser_name']
+
+    def get_browser_version(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'browser_version' not in self.data[section_name].keys():
+                raise Exception("browser_version option is not present in the config file")
+        return self.data[section_name]['browser_version']
+
+    def get_build_name(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'build_name' not in self.data[section_name].keys():
+                raise Exception("build_name option is not present in the config file")
+        return self.data[section_name]['build_name']
+
+    def get_accept_ssl_certs(self, section_name):
+        if section_name not in self.data.keys():
+            raise Exception(section_name, " section is not present in the config file")
+        else:
+            if 'accept_ssl_certs' not in self.data[section_name].keys():
+                raise Exception("accept_ssl_certs option is not present in the config file")
+        return self.data[section_name]['accept_ssl_certs']

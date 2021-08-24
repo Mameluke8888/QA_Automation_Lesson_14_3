@@ -163,3 +163,51 @@ class IniFileReader:
         if value is None:
             raise Exception("rating option is not found in section ", section_name)
         return value
+
+    def get_username(self, section_name):
+        value = self.data.get(section_name, "username", fallback=None)
+        if value is None:
+            raise Exception("username option is not found in section ", section_name)
+        return value
+
+    def get_access_key(self, section_name):
+        value = self.data.get(section_name, "access_key", fallback=None)
+        if value is None:
+            raise Exception("access_key option is not found in section ", section_name)
+        return value
+
+    def get_os_version(self, section_name):
+        value = self.data.get(section_name, "os_version", fallback=None)
+        if value is None:
+            raise Exception("os_version option is not found in section ", section_name)
+        return value
+
+    def get_os_name(self, section_name):
+        value = self.data.get(section_name, "os_name", fallback=None)
+        if value is None:
+            raise Exception("os_name option is not found in section ", section_name)
+        return value
+
+    def get_browser_name(self, section_name):
+        value = self.data.get(section_name, "browser_name", fallback=None)
+        if value is None:
+            raise Exception("browser_name option is not found in section ", section_name)
+        return value
+
+    def get_browser_version(self, section_name):
+        value = self.data.get(section_name, "browser_version", fallback=None)
+        if value is None:
+            raise Exception("browser_version option is not found in section ", section_name)
+        return value
+
+    def get_build_name(self, section_name):
+        value = self.data.get(section_name, "build", fallback=None)
+        if value is None:
+            raise Exception("build option is not found in section ", section_name)
+        return value
+
+    def get_accept_ssl_certs(self, section_name):
+        value = self.data.get(section_name, "accept_ssl_certs", fallback=None)
+        if value is None:
+            raise Exception("accept_ssl_certs option is not found in section ", section_name)
+        return value
