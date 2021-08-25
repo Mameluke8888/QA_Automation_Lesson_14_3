@@ -86,9 +86,9 @@ class JsonFileReader:
         if section_name not in self.data.keys():
             raise Exception(section_name, " section is not present in the config file")
         else:
-            if 'build_name' not in self.data[section_name].keys():
-                raise Exception("build_name option is not present in the config file")
-        return self.data[section_name]['build_name']
+            if 'build' not in self.data[section_name].keys():
+                raise Exception("build option is not present in the config file")
+        return self.data[section_name]['build']
 
     def get_accept_ssl_certs(self, section_name):
         if section_name not in self.data.keys():
