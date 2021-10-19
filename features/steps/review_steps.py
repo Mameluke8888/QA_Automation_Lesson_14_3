@@ -76,9 +76,11 @@ def click_continue_button(context):
 
 @then('message \"Thank you for your review. It has been submitted to the webmaster for approval\" appears')
 def check_review_message(context):
-    # browser = context.browser
+    browser = context.browser
     product_page = context.product_page
-    review_message = product_page.review_message.get_text()
+    # review_message = product_page.review_message.get_text()
     # review_message = Element(browser, By.XPATH, "//form[@id='form-review']/div[2]").get_text()
+    review_message = Element(browser, By.XPATH, "//div[@class='alert alert-success']").get_text()
+    print(review_message)
     assert review_message == "Thank you for your review. It has been submitted to the webmaster for approval."
 

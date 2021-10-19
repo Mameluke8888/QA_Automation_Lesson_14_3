@@ -11,13 +11,37 @@ class IniFileReader:
     def get_browser(self, section_name):
         value = self.data.get(section_name, 'browser', fallback=None)
         if value is None:
-            raise Exception("Browser option is not present in the config file")
+            raise Exception("browser option is not present in the config file")
+        return value
+
+    # def get_browser_width(self, section_name):
+    #     value = self.data.get(section_name, 'width', fallback=None)
+    #     if value is None:
+    #         raise Exception("width option is not present in the config file")
+    #     return value
+    #
+    # def get_browser_height(self, section_name):
+    #     value = self.data.get(section_name, 'height', fallback=None)
+    #     if value is None:
+    #         raise Exception("height option is not present in the config file")
+    #     return value
+
+    def get_browser_width(self, section_name):
+        value = self.data.get(section_name, 'width', fallback=None)
+        if value is None:
+            value = -1
+        return value
+
+    def get_browser_height(self, section_name):
+        value = self.data.get(section_name, 'height', fallback=None)
+        if value is None:
+            value = -1
         return value
 
     def get_wait_time(self, section_name):
         value = self.data.get(section_name, 'wait', fallback=None)
         if value is None:
-            raise Exception("Wait_time option is not present in the config file")
+            raise Exception("wait_time option is not present in the config file")
         return int(value)
 
     def get_url(self):

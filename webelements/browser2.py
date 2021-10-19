@@ -5,6 +5,7 @@ from config_reader import ConfigReader
 from pprint import pprint
 
 remote_section_name = 'remote'
+environment_section_name = 'environment'
 
 class Browser:
     """
@@ -16,13 +17,38 @@ class Browser:
     def __init__(self, url, browser_name="", time_wait=10, scenario=""):
         # decide which browser to open, can be extended
         configs = ConfigReader("config.ini")
+        # comment next 2 lines, uncomment try-except section below to read configurable values of size of browser window
+        # browser_width = -1
+        # browser_height = -1
+        # try:
+        #     browser_width = configs.get_browser_width(environment_section_name)
+        #     browser_height = configs.get_browser_height(environment_section_name)
+        # except Exception:
+        #     browser_width = -1
+        #     browser_height = -1
+
+        # normal flow if values are provided
+        # browser_width = configs.get_browser_width(environment_section_name)
+        # browser_height = configs.get_browser_height(environment_section_name)
+        browser_width = -1
+        browser_height = -1
         try:
             if browser_name.lower() == "firefox":
                 self.driver = webdriver.Firefox(executable_path='../../drivers/geckodriver')
+                self.driver.maximize_window()
             elif browser_name.lower() == 'chrome':
                 options = webdriver.ChromeOptions()
-                options.add_argument("--start-maximized")
+                # setting size of browser window if values are provided, -1 means that the values are not provided
+                if (browser_width != -1) and (browser_height != -1):
+                    options.add_argument("--window-size={},{}".format(browser_width, browser_height))
+                # testing desired capabilities, maximization doesn't work on my Mac
+                # options.add_argument("--start-maximized")
+                # options.add_argument("--window-size=360,800")
+                options.add_argument("--incognito")
+                options.add_experimental_option("excludeSwitches", ['enable-automation'])
                 self.driver = webdriver.Chrome(executable_path='../../drivers/chromedriver', options=options)
+                if (browser_width == -1) or (browser_height == -1):
+                    self.driver.maximize_window()
                 # self.driver = webdriver.Chrome(executable_path='drivers/chromedriver', desired_capabilities={"chromeOptions": {"binary": 'mycefapp.exe'}})
             elif browser_name.lower() == 'remote':
                 username = configs.get_username(remote_section_name)
@@ -36,7 +62,7 @@ class Browser:
                     'build': configs.get_build_name(remote_section_name),  # Your tests will be organized within this build
                     'acceptSslCerts': configs.get_accept_ssl_certs(remote_section_name)
                                }
-                pprint(desired_cap)
+                # pprint(desired_cap)
                 self.driver = webdriver.Remote(
                     command_executor='https://' + username + ':' + access_key + '@hub-cloud.browserstack.com/wd/hub',
                     desired_capabilities=desired_cap)
@@ -48,7 +74,7 @@ class Browser:
         self.driver.get(url)
         self.wait = WebDriverWait(self.driver, 10)
 
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
         self.driver.implicitly_wait(time_wait)
 
     def get_wd_wait(self):

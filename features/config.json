@@ -1,6 +1,8 @@
 {
   "browser": "firefox",
   "wait_time": 10,
+  "width": 1800,
+  "height": 2400,
   "user1": {
     "email": "svetlana.match3@gmail.com",
     "password": "qwerty123"

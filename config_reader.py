@@ -16,6 +16,12 @@ class ConfigReader:
     def get_browser(self, section_name):
         return self.reader.get_browser(section_name)
 
+    def get_browser_width(self, section_name):
+        return self.reader.get_browser_width(section_name)
+
+    def get_browser_height(self, section_name):
+        return self.reader.get_browser_height(section_name)
+
     def get_wait_time(self, section_name):
         return self.reader.get_wait_time(section_name)
 

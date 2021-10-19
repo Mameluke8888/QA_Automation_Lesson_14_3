@@ -10,8 +10,28 @@ class JsonFileReader:
 
     def get_browser(self):
         if 'browser' not in self.data.keys():
-            raise Exception("Browser option is not present in the config file")
+            raise Exception("browser option is not present in the config file")
         return self.data['browser']
+
+    # def get_browser_width(self):
+    #     if 'width' not in self.data.keys():
+    #         raise Exception("width option is not present in the config file")
+    #     return self.data['width']
+    #
+    # def get_browser_height(self):
+    #     if 'height' not in self.data.keys():
+    #         raise Exception("height option is not present in the config file")
+    #     return self.data['height']
+
+    def get_browser_width(self):
+        if 'width' not in self.data.keys():
+            return -1
+        return self.data['width']
+
+    def get_browser_height(self):
+        if 'height' not in self.data.keys():
+            return -1
+        return self.data['height']
 
     def get_wait_time(self):
         if 'wait_time' not in self.data.keys():
