@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 
 
 URL = "https://techskillacademy.net/brainbucket/index.php"
-configs = ConfigReader("config.ini")
+configs = ConfigReader("features/config.ini")
 user_section_name = 'user2'
 order_section_name = 'order2'
 
