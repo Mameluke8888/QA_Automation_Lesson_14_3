@@ -1,6 +1,10 @@
 from behave import given, when, then
 import time
 
+import sys
+from os.path import abspath
+sys.path.append(abspath('../'))
+
 from webelements.browser2 import Browser
 from components.header import Header
 from config_reader import ConfigReader
