@@ -1,4 +1,4 @@
-from configparser import  ConfigParser
+from configparser import ConfigParser
 
 class IniFileReader:
     def __init__(self, filename):
@@ -29,13 +29,13 @@ class IniFileReader:
     def get_browser_width(self, section_name):
         value = self.data.get(section_name, 'width', fallback=None)
         if value is None:
-            value = -1
+            value = -1  # if value is not provided in the file, return -1
         return value
 
     def get_browser_height(self, section_name):
         value = self.data.get(section_name, 'height', fallback=None)
         if value is None:
-            value = -1
+            value = -1  # if value is not provided in the file, return -1
         return value
 
     def get_wait_time(self, section_name):
