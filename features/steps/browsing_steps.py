@@ -5,6 +5,10 @@ import sys
 from os.path import abspath
 sys.path.append(abspath('../'))
 
+import os
+# Print the current working directory
+print("Current working directory: {0}".format(os.getcwd()))
+
 from webelements.browser2 import Browser
 from components.header import Header
 from config_reader import ConfigReader
