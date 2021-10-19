@@ -16,7 +16,7 @@ class Browser:
     # the executable path to the driver is incorrect
     def __init__(self, url, browser_name="", time_wait=10, scenario=""):
         # decide which browser to open, can be extended
-        configs = ConfigReader("features/config.ini")
+        configs = ConfigReader("config.ini")
         # comment next 2 lines, uncomment try-except section below to read configurable values of size of browser window
         # browser_width = -1
         # browser_height = -1

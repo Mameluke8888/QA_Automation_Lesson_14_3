@@ -19,7 +19,7 @@ from webelements.UIElement3 import UIElement as Element
 from selenium.webdriver.common.by import By
 
 URL = "https://techskillacademy.net/brainbucket/index.php"
-configs = ConfigReader("features/config.ini")
+configs = ConfigReader("config.ini")
 
 
 @given("user has navigation bar available on home page")
