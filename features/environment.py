@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 
 
 def before_all(context):
-    configs = ConfigReader("config.ini")
+    configs = ConfigReader("features/config.ini")
     context.configs = configs
 
 
