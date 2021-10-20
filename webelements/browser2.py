@@ -34,7 +34,7 @@ class Browser:
         browser_height = -1
         try:
             if browser_name.lower() == "firefox":
-                self.driver = webdriver.Firefox(executable_path='../../drivers/geckodriver')
+                self.driver = webdriver.Firefox(executable_path='../drivers/geckodriver')
                 self.driver.maximize_window()
             elif browser_name.lower() == 'chrome':
                 options = webdriver.ChromeOptions()
@@ -46,7 +46,7 @@ class Browser:
                 # options.add_argument("--window-size=360,800")
                 options.add_argument("--incognito")
                 options.add_experimental_option("excludeSwitches", ['enable-automation'])
-                self.driver = webdriver.Chrome(executable_path='../../drivers/chromedriver', options=options)
+                self.driver = webdriver.Chrome(executable_path='../drivers/chromedriver', options=options)
                 if (browser_width == -1) or (browser_height == -1):
                     self.driver.maximize_window()
                 # self.driver = webdriver.Chrome(executable_path='drivers/chromedriver', desired_capabilities={"chromeOptions": {"binary": 'mycefapp.exe'}})
