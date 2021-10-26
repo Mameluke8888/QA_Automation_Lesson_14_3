@@ -88,5 +88,6 @@ def check_warning_message(context):
     browser = context.browser
     login_message = Element(browser, By.XPATH, "//*[@class='alert alert-danger' and contains(text(), 'Warning')]")
     # assertion that the message appears that typed in credentials are not match with the registered data
+    time.sleep(8)
     assert login_message.get_text() == 'Warning: No match for E-Mail Address and/or Password.'
 
