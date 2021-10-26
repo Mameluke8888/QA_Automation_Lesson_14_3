@@ -3574,3 +3574,59 @@ JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILU
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1635230129873	geckodriver	INFO	Listening on 127.0.0.1:51554
+1635230129890	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofile2Bgvz2"
+1635230130556	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofile2Bgvz2/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1635230132731	Marionette	INFO	Listening on port 51559
+1635230132808	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1635230137668	Marionette	INFO	Stopped listening on port 51559
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1635230138339	geckodriver	INFO	Listening on 127.0.0.1:51637
+1635230139354	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofileVmAbIf"
+1635230139897	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofileVmAbIf/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1635230142097	Marionette	INFO	Listening on port 51644
+1635230142186	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1635230147163	Marionette	INFO	Stopped listening on port 51644
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1635230147830	geckodriver	INFO	Listening on 127.0.0.1:51715
+1635230148841	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofilesahZV0"
+1635230149545	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofilesahZV0/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1635230151736	Marionette	INFO	Listening on port 51722
+1635230151869	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1635230164522	Marionette	INFO	Stopped listening on port 51722
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1635230165237	geckodriver	INFO	Listening on 127.0.0.1:51809
+1635230166250	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofilePhjIJx"
+1635230166812	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/05/wcry_nsd75d7b7txtlwpx6p80000gn/T/rust_mozprofilePhjIJx/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1635230169004	Marionette	INFO	Listening on port 51816
+1635230169113	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: http://%(server)s/dummy/blocklist// is not a valid URL.
+1635230187028	Marionette	INFO	Stopped listening on port 51816
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
