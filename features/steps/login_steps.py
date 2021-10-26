@@ -88,11 +88,10 @@ def check_warning_message(context):
     browser = context.browser
     login_message = Element(browser, By.XPATH, "//*[@class='alert alert-danger' and contains(text(), 'Warning')]")
     # assertion that the message appears that typed in credentials are not match with the registered data
-    time.sleep(8)
+    time.sleep(10)
     login_message_text = login_message.get_text()
     if 'login attempts' in login_message_text:
-        assert login_message_text == \
-               'Warning: Your account has exceeded allowed number of login attempts.Please try again in 1 hour.'
+        assert login_message_text == 'Warning: Your account has exceeded allowed number of login attempts.Please try again in 1 hour.'
     else:
         assert login_message.get_text() == 'Warning: No match for E-Mail Address and/or Password.'
 
